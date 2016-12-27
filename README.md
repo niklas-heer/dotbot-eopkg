@@ -1,7 +1,5 @@
 # Dotbot eopkg Plugin
 
-**WIP - needs more testing**
-
 For use with [dotbot](https://github.com/anishathalye/dotbot),
 this plugin allows one to easily install or upgrade a list of eopkg packages.
 
