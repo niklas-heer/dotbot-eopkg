@@ -66,7 +66,7 @@ class Eopkg(dotbot.Plugin):
     def _install(self, pkg):
         # to have a unified string which we can query
         # we need to execute the command with LANG=en_US.UTF-8
-        cmd = 'LANG=en_US.UTF-8 eopkg -y it {}'.format(pkg)
+        cmd = 'LANG=en_US.UTF-8 sudo eopkg -y it {}'.format(pkg)
 
         self._log.info("Installing \"{}\". Please wait...".format(pkg))
 
