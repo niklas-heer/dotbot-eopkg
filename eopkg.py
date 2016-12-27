@@ -19,9 +19,9 @@ class Eopkg(dotbot.Plugin):
         self._strings = {}
 
         # Names to search the query string for
-        self._strings[PkgStatus.UP_TO_DATE] = "there is nothing to do"
-        self._strings[PkgStatus.INSTALLED] = "Optional dependencies for"
-        self._strings[PkgStatus.NOT_FOUND] = "target not found"
+        self._strings[PkgStatus.UP_TO_DATE] = "The following package(s)"
+        self._strings[PkgStatus.INSTALLED] = "Installed"
+        self._strings[PkgStatus.NOT_FOUND] = "System error. Program terminated."
         self._strings[PkgStatus.ERROR] = "==> ERROR:"
 
     def can_handle(self, directive):
@@ -69,9 +69,6 @@ class Eopkg(dotbot.Plugin):
         cmd = 'LANG=en_US.UTF-8 sudo eopkg -y it {}'.format(pkg)
 
         self._log.info("Installing \"{}\". Please wait...".format(pkg))
-
-        # needed to avoid conflicts due to locking
-        time.sleep(1)
 
         proc = subprocess.Popen(cmd, shell=True,
                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
