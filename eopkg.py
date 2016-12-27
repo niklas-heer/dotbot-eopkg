@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os, subprocess, dotbot, time
 from enum import Enum
 
